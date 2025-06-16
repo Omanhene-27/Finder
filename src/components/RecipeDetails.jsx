@@ -6,7 +6,7 @@ const RecipeDetails = ({ recipeId, onClose }) => {
     useEffect(() => {
         if (recipeId) {
             console.log("Fetching recipe details for ID:", recipeId);
-            fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`)
+            fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId || '' }`)
                 .then((response) => response.json())
                 .then((data) => {
                   console.log("API Response:", data);
